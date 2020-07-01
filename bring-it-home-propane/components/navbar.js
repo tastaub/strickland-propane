@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import theme from "../public/theme";
+import Hamburger from "../components/hamburger";
 
 const NavbarWrapper = styled.div`
   width: 100%;
@@ -35,10 +36,16 @@ const NavbarItem = styled.div`
   }
 `;
 
+const animateHamburger = (event) => {
+  console.log(event);
+};
+
 export default function Navbar() {
   return (
     <NavbarWrapper>
-      <NavbarItem>Hamburger</NavbarItem>
+      <NavbarItem>
+        <Hamburger onClick={animateHamburger} button="poop"></Hamburger>
+      </NavbarItem>
       <NavbarItem>Bring It Home Propane</NavbarItem>
       <NavbarItem button="true">Order Now</NavbarItem>
     </NavbarWrapper>
