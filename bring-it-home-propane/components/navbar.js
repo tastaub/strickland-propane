@@ -20,7 +20,7 @@ const NavbarWrapper = styled.div`
 `;
 
 const NavbarItem = styled.div`
-  padding: 6.5px 10px;
+  ${({ icon }) => (icon ? "padding: 2.5px 10px;" : "padding: 6.5px 10px;")}
   ${({ button }) => {
     if (button) {
       return `
@@ -39,7 +39,7 @@ const NavbarItem = styled.div`
 export default function Navbar() {
   return (
     <NavbarWrapper>
-      <NavbarItem>
+      <NavbarItem icon="true">
         <Hamburger></Hamburger>
       </NavbarItem>
       <NavbarItem>Bring It Home Propane</NavbarItem>
