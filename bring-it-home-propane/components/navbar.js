@@ -36,15 +36,11 @@ const NavbarItem = styled.div`
   }
 `;
 
-const animateHamburger = (event) => {
-  console.log(event);
-};
-
 export default function Navbar() {
   return (
     <NavbarWrapper>
       <NavbarItem>
-        <Hamburger onClick={animateHamburger} button="poop"></Hamburger>
+        <Hamburger></Hamburger>
       </NavbarItem>
       <NavbarItem>Bring It Home Propane</NavbarItem>
       <NavbarItem button="true">Order Now</NavbarItem>
