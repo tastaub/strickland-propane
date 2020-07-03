@@ -34,14 +34,28 @@ const TitleMenu = styled.div`
   background: ${theme.brandOffWhite};
   color: ${theme.brandBlue};
   font-weight: 900;
-  box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.3);
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+
+  div {
+    padding: 10px;
+  }
 
   .phone-item {
+    padding: 5px;
+    background: ${theme.brandBlue};
+    color: ${theme.brandOffWhite};
+    border: 5px solid ${theme.brandOffWhite};
+
+    &:hover {
+      background: ${theme.brandOffWhite};
+      color: ${theme.brandBlue};
+      border: 5px solid ${theme.brandBlue};
+    }
+
     div {
       display: none;
+      padding: 0;
     }
 
     i {
