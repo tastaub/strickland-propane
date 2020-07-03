@@ -4,7 +4,7 @@ import Hamburger from "../components/hamburger";
 
 const NavbarWrapper = styled.div`
   font-size: 14px;
-  padding: 10px 10px 10px 0px;
+  padding: 10px 10px 15px 0px;
   background-color: ${theme.brandBlue};
   color: ${theme.brandOffWhite};
   display: flex;
@@ -16,6 +16,9 @@ const NavbarItem = styled.div`
   ${({ button }) => {
     if (button) {
       return `
+      font-weight: 900;
+      margin-top: 5px;
+      padding: 4.5px 10px;
       color: ${theme.brandBlue};
       background-color: ${theme.brandOffWhite};
       border-radius: 9px;
@@ -24,6 +27,38 @@ const NavbarItem = styled.div`
   }}
   @media only screen and (min-width: 600px) {
     padding: 10px 10px;
+  }
+`;
+
+const TitleMenu = styled.div`
+  background: ${theme.brandOffWhite};
+  color: ${theme.brandBlue};
+  font-weight: 900;
+  box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.3);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+
+  .phone-item {
+    div {
+      display: none;
+    }
+
+    i {
+      display: block;
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+    .phone-item {
+      div {
+        display: block;
+      }
+
+      i {
+        display: none;
+      }
+    }
   }
 `;
 
@@ -36,6 +71,10 @@ const MenuAccordion = styled.div`
     transition: all 2s ease-in;
     display: flex;
     height: auto;
+
+    @media only screen and (min-width: 600px) {
+      width: 50%;
+    }
   }
 `;
 
@@ -48,6 +87,13 @@ export default function Navbar() {
         </NavbarItem>
         <NavbarItem button="true">Order Now</NavbarItem>
       </NavbarWrapper>
+      <TitleMenu>
+        <div>Bring it home Propane</div>
+        <div className="phone-item">
+          <i class="fa fa-phone" aria-hidden="true"></i>
+          <div>555-555-5555</div>
+        </div>
+      </TitleMenu>
       <MenuAccordion id="accordion">
         <h1>Hello</h1>
       </MenuAccordion>
