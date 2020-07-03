@@ -78,17 +78,16 @@ const TitleMenu = styled.div`
 
 const MenuAccordion = styled.div`
   background: #333;
-  height: 0;
-  display: none;
+  max-height: 0;
+  display: block;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
 
   &.active {
-    transition: all 2s ease-in;
     display: flex;
-    height: auto;
-
-    @media only screen and (min-width: 600px) {
-      width: 50%;
-    }
+    max-height: 99em;
+    display: block;
+    transition: max-height 0.5s ease-in-out;
   }
 `;
 
