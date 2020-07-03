@@ -27,13 +27,30 @@ const NavbarItem = styled.div`
   }
 `;
 
+const MenuAccordion = styled.div`
+  background: #333;
+  height: 0;
+  display: none;
+
+  &.active {
+    transition: all 2s ease-in;
+    display: flex;
+    height: auto;
+  }
+`;
+
 export default function Navbar() {
   return (
-    <NavbarWrapper>
-      <NavbarItem>
-        <Hamburger />
-      </NavbarItem>
-      <NavbarItem button="true">Order Now</NavbarItem>
-    </NavbarWrapper>
+    <div>
+      <NavbarWrapper>
+        <NavbarItem>
+          <Hamburger />
+        </NavbarItem>
+        <NavbarItem button="true">Order Now</NavbarItem>
+      </NavbarWrapper>
+      <MenuAccordion id="accordion">
+        <h1>Hello</h1>
+      </MenuAccordion>
+    </div>
   );
 }

@@ -115,6 +115,7 @@ export default function Hamburger() {
   function animateMenu(event) {
     event.preventDefault();
     event.currentTarget.classList.toggle("active");
+    document.querySelector("#accordion").classList.toggle("active");
   }
 
   return (
