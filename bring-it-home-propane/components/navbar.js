@@ -3,24 +3,16 @@ import theme from "../public/theme";
 import Hamburger from "../components/hamburger";
 
 const NavbarWrapper = styled.div`
-  width: 100%;
-  height: 40px;
   font-size: 14px;
-  padding: 6.5px 10px;
+  padding: 10px 10px 10px 0px;
   background-color: ${theme.brandBlue};
   color: ${theme.brandOffWhite};
   display: flex;
   justify-content: space-between;
-
-  @media only screen and (min-width: 600px) {
-    height: 60px;
-    font-size: 20px;
-    padding: 10px 10px;
-  }
 `;
 
 const NavbarItem = styled.div`
-  ${({ icon }) => (icon ? "padding: 2.5px 10px;" : "padding: 6.5px 10px;")}
+  padding: 6.5px 10px;
   ${({ button }) => {
     if (button) {
       return `
@@ -30,7 +22,6 @@ const NavbarItem = styled.div`
       `;
     }
   }}
-
   @media only screen and (min-width: 600px) {
     padding: 10px 10px;
   }
@@ -39,10 +30,9 @@ const NavbarItem = styled.div`
 export default function Navbar() {
   return (
     <NavbarWrapper>
-      <NavbarItem icon="true">
-        <Hamburger></Hamburger>
+      <NavbarItem>
+        <Hamburger />
       </NavbarItem>
-      <NavbarItem>Bring It Home Propane</NavbarItem>
       <NavbarItem button="true">Order Now</NavbarItem>
     </NavbarWrapper>
   );
